@@ -1,12 +1,12 @@
-// package main
+package main
 
-// import (
-// 	"fmt"
-// )
+import (
+	"fmt"
+)
 
-// const ()
+const ()
 
-// func main() {
+func main() {
 
-// 	fmt.Println("Hola")
-// }
+	fmt.Println("Hola")
+}

@@ -6,7 +6,7 @@ import (
 )
 
 const (
-// precision = 2
+ precision = 2
 )
 
 func main() {

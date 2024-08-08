@@ -19,7 +19,7 @@ func jugar() {
 		fmt.Scanln(&num2)
 		if num2 == num {
 			fmt.Println("Felicidades has ganado")
-			return
+			jugardenuevo()
 		} else if num2 < num {
 			fmt.Println("El numero ingresado es menor")
 		} else if num2 > num {
@@ -27,5 +27,20 @@ func jugar() {
 		}
 	}
 	fmt.Println("Lo siento, el numero era: ", num)
+	jugardenuevo()
+}
+func jugardenuevo() {
+	var Eleccion string
+	fmt.Println("Quieres jugar nuevamente? (s/n)")
+	fmt.Scanln(&Eleccion)
+	switch Eleccion {
+	case "s":
+		jugar()
+	case "n":
+		fmt.Println("Gracias por jugar")
+	default:
+		fmt.Println("Opcion ingresada no válida, por favor intenta nuevamente")
+		jugardenuevo()
+	}
 
 }

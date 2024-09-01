@@ -4,28 +4,28 @@ import "fmt"
 
 //Interface
 type Animal interface {
-	sonido()
+	Sonido()
 }
 
 //Dog struct and methods
-type perro struct {
+type Perro struct {
 	Nombre string
 }
 
-func (p *perro) sonido() {
+func (p *Perro) Sonido() {
 	fmt.Println(p.Nombre + "*Ladra*")
 }
 
 //Cat struct and methods
-type gato struct {
+type Gato struct {
 	Nombre string
 }
 
-func (g *gato) sonido() {
+func (g *Gato) Sonido() {
 	fmt.Println(g.Nombre + "*Miau*")
 }
 
 //Func to make noise with struct
 func MakeNoise(animal Animal) {
-	animal.sonido()
+	animal.Sonido()
 }

@@ -17,5 +17,8 @@ func main() {
 	albumController := controllers.NewAlbumController(albumRepo)
 	r := gin.Default()
 	r.GET("/albums", albumController.ShowAlbums)
+	r.POST("/albums", albumController.AddAlbum)
+	r.DELETE("/albums/:id", albumController.DeleteAlbum)
+	r.PUT("/albums/:id", albumController.ModifyAlbum)
 	r.Run("localhost:8080")
 }

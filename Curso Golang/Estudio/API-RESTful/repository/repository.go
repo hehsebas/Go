@@ -13,7 +13,7 @@ func NewAlbumRepository(db *sql.DB) *AlbumRepository {
 	return &AlbumRepository{DB: db}
 }
 func (r *AlbumRepository) GetAlbums() ([]models.Album, error) {
-	rows, err := r.DB.Query("SELECT id, title, artist, price FROM albums")
+	rows, err := r.DB.Query("SELECT * FROM albums")
 	if err != nil {
 		return nil, err
 	}
@@ -33,5 +33,13 @@ func (r *AlbumRepository) GetAlbums() ([]models.Album, error) {
 }
 func (r *AlbumRepository) AddAlbum(album models.Album) error {
 	_, err := r.DB.Exec("INSERT INTO albums (id, title, artist, price) VALUES (?,?,?,?)", album.ID, album.Title, album.Artist, album.Price)
+	return err
+}
+func (r *AlbumRepository) DeleteAlbum(id int) error {
+	_, err := r.DB.Exec("DELETE FROM albums WHERE id = ?", id)
+	return err
+}
+func (r *AlbumRepository) ModifyAlbum(album models.Album, id int) error {
+	_, err := r.DB.Exec("UPDATE albums SET id=?, title = ?, artist = ?, price = ? WHERE id = ?", album.ID, album.Title, album.Artist, album.Price, id)
 	return err
 }

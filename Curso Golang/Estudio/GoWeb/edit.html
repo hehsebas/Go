@@ -1,7 +1,8 @@
 <h1>Editando {{.Title}}</h1>
 <form action="/save/{{.Title}}" method="POST">
   <div>
-    <textarea name="body" rows="20" cols="80">{{printf "%s" .Body}}</textarea>
+    <label for="body">Contenido:</label>
+    <textarea id="body" name="body" rows="20" cols="80" title="Contenido del artículo" placeholder="Escribe el contenido aquí">{{printf "%s" .Body}}</textarea>
   </div>
   <div><input type="submit" value="Guardar" /></div>
 </form>

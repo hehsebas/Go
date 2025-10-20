@@ -1,0 +1,35 @@
+{{template "base" .}}
+
+{{define "title"}}Home{{end}}
+
+{{define "content"}}
+
+<section class="w-full py-5">
+    <h1 class="text-center font-bold text-2xl py-5">Piedra, Papel o Tijera</h1>
+    <div class="flex justify-center text-center gap-5">
+        <div class="mt-5">
+            <img src="/static/img/rock_icon.png" alt="Rock" class="game-icon">
+        </div>
+        <div class="mt-5">
+            <img src="/static/img/scissors_icon.png" alt="Scissors" class="game-icon">
+        </div>
+        <div class="mt-5">
+            <img src="/static/img/paper_icon.png" alt="Paper" class="game-icon">
+        </div>
+    </div>
+    <div class="text-center mt-4">
+        <p class="py-5 text-lg">This is a simple web application built with Go and Tailwind CSS.</p>
+        <a href="/new-game" class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition duration-300">New Game</a>
+    </div>
+</section>
+<section class="w-full py-5 justify-center text-center">
+    <h2 class="py-3 text-center">How to play</h2>
+    <div class="flex justify-center text-center">
+        <ol class="list-none text-left">
+            <li class="py-2">Click on the "New Game" button to start a new game.</li>
+            <li class="py-2">Click on the "Play" button to play the game.</li>
+            <li class="py-2">Click on the "About" button to learn more about the game.</li>
+        </ol>
+    </div>
+</section>
+{{end}}

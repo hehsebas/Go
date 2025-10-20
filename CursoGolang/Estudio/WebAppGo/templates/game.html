@@ -1,0 +1,76 @@
+{{template "base" .}}
+
+{{define "title"}}Game{{end}}
+
+{{define "content"}}
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col py-4 text-center">
+                <h2>Welcome {{.Name}}</h2>
+                <p class="fw-bold">
+                    0
+                </p>
+                <div class="d-grid gap-1 card p-3">
+                    <button class="btn btn-outline-success ml-1">
+                        <img src="static/img/hand_paper.png" alt="Paper" class="img-fluid" width="50">
+                        <span class="fw-bold">
+                            Paper
+                        </span>
+                    </button>
+                    <button class="btn btn-outline-success ml-1">
+                        <img src="static/img/hand_rock.png" alt="Rock" class="img-fluid" width="50">
+                        <span class="fw-bold">
+                            Rock
+                        </span>
+                    </button>
+                    <button class="btn btn-outline-success ml-1">
+                        <img src="static/img/hand_scissors.png" alt="Scissors" class="img-fluid" width="50">
+                        <span class="fw-bold">
+                            Scissors
+                        </span>
+                    </button>
+                </div>
+            </div>
+            <div class="col py-4 text-center">
+                <h2>Computer</h2>
+                <p class="fw-bold">
+                    0
+                </p>
+                <div class="card p-3">
+                    <div class="d-flex justify-content-center">
+                        <img src="static/img/reload_icon.png" alt="Reload" class="img-fluid" width="200">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section>
+    <div class="container">
+        <div class="row">
+            <h2>
+                Resultados
+            </h2>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">
+                    El jugador <strong>{{.Name}}</strong> eligió rock.
+                </li>
+                <li class="list-group-item">
+                    La computadora eligió papel.
+                </li>
+                <li class="list-group-item">
+                    El jugador <strong>{{.Name}}</strong> pierde!
+                </li>
+            </ul>
+        </div>
+        <div class="row text-center">
+            <div class="col py-4">
+                <a href="/new-game" class="btn btn-success btn-lg">New Game</a >
+
+            </div>
+
+        </div>
+    </div>
+</section>
+{{end}}
